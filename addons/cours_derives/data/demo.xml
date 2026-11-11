@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Deux contrats forward -->
+    <record id="forward_demo_001" model="cours.forward">
+        <field name="name">FWD-001</field>
+        <field name="S0">80</field>
+        <field name="r">0.04</field>
+        <field name="T">0.5</field>
+    </record>
+
+    <record id="forward_demo_002" model="cours.forward">
+        <field name="name">FWD-002</field>
+        <field name="S0">100</field>
+        <field name="r">0.05</field>
+        <field name="T">1</field>
+    </record>
+
+    <!-- Quatre options vanille -->
+    <record id="option_demo_001" model="cours.option">
+        <field name="name">OPT-001</field>
+        <field name="option_type">call</field>
+        <field name="K">50</field>
+        <field name="S_T">45</field>
+        <field name="premium">2</field>
+    </record>
+
+    <record id="option_demo_002" model="cours.option">
+        <field name="name">OPT-002</field>
+        <field name="option_type">put</field>
+        <field name="K">50</field>
+        <field name="S_T">45</field>
+        <field name="premium">3</field>
+    </record>
+
+    <record id="option_demo_003" model="cours.option">
+        <field name="name">OPT-003</field>
+        <field name="option_type">call</field>
+        <field name="K">100</field>
+        <field name="S_T">130</field>
+        <field name="premium">10</field>
+    </record>
+
+    <record id="option_demo_004" model="cours.option">
+        <field name="name">OPT-004</field>
+        <field name="option_type">put</field>
+        <field name="K">100</field>
+        <field name="S_T">130</field>
+        <field name="premium">5.12</field>
+    </record>
+</odoo>

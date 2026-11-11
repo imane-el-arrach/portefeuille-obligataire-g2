@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Vue formulaire des forwards -->
+    <record id="view_forward_form" model="ir.ui.view">
+        <field name="name">cours.forward.form</field>
+        <field name="model">cours.forward</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="S0"/>
+                        <field name="r"/>
+                        <field name="T"/>
+                        <field name="F0"/>
+                        <field name="t_elapsed"/>
+                        <field name="S_t"/>
+                        <field name="value" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vue liste des forwards avec coloration -->
+    <record id="view_forward_tree" model="ir.ui.view">
+        <field name="name">cours.forward.tree</field>
+        <field name="model">cours.forward</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="value &gt; 0"
+                  decoration-danger="value &lt;= 0">
+                <field name="name"/>
+                <field name="S0"/>
+                <field name="r"/>
+                <field name="T"/>
+                <field name="F0"/>
+                <field name="t_elapsed"/>
+                <field name="S_t"/>
+                <field name="value"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action des forwards -->
+    <record id="action_forward" model="ir.actions.act_window">
+        <field name="name">Forwards</field>
+        <field name="res_model">cours.forward</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu principal -->
+    <menuitem id="menu_derives_root"
+              name="Derives"
+              sequence="10"/>
+
+    <!-- Menu des forwards -->
+    <menuitem id="menu_forward"
+              name="Forwards"
+              parent="menu_derives_root"
+              action="action_forward"
+              sequence="10"/>
+
+    <!-- Vue liste des options -->
+    <record id="view_cours_option_tree" model="ir.ui.view">
+        <field name="name">cours.option.tree</field>
+        <field name="model">cours.option</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="option_type"/>
+                <field name="S_T"/>
+                <field name="K"/>
+                <field name="premium"/>
+                <field name="payoff"/>
+                <field name="profit"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vue formulaire des options -->
+    <record id="view_cours_option_form" model="ir.ui.view">
+        <field name="name">cours.option.form</field>
+        <field name="model">cours.option</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="option_type"/>
+                        <field name="S_T"/>
+                        <field name="K"/>
+                        <field name="premium"/>
+                        <field name="payoff" readonly="1"/>
+                        <field name="profit" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action des options -->
+    <record id="action_cours_option" model="ir.actions.act_window">
+        <field name="name">Options</field>
+        <field name="res_model">cours.option</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu des options -->
+    <menuitem id="menu_cours_option"
+              name="Options"
+              parent="menu_derives_root"
+              action="action_cours_option"
+              sequence="20"/>
+</odoo>
