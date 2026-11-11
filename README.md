@@ -1,39 +1,37 @@
-
 # Gestion de portefeuille obligataire — Groupe 2
 
 ## Présentation
 
-Projet académique de gestion et d'analyse d'un portefeuille obligataire avec Odoo 17.
+Ce projet académique vise à développer une solution de suivi et d'analyse financière d'un portefeuille d'obligations via la plateforme Odoo 17.
 
 ## Objectifs
 
-- Modéliser des obligations.
-- Calculer les indicateurs financiers associés.
-- Intégrer les fonctionnalités dans Odoo.
-- Exploiter les données pour analyser le portefeuille.
+- Concevoir des modèles de données adaptés aux titres obligataires.
+- Calculer l'ensemble des indicateurs et ratios financiers clés.
+- Implémenter et intégrer ces modules métiers au sein d'Odoo.
+- Analyser et valoriser le portefeuille grâce à l'exploitation des données.
 
 ## Environnement technique
 
-- Odoo 17 Community
+- Odoo 17 (Community Edition)
 - Python
 - PostgreSQL 15
-- Docker et Docker Compose
-- Git et GitHub
+- Docker & Docker Compose
+- Git & GitHub
 
 ## Structure du projet
 
-- `addons/cours_derives/` : module Odoo issu du TP 0.
-- `src/` : code source du projet.
-- `tests/` : tests.
-- `notebooks/` : notebooks d'analyse.
-- `data/` : données du projet.
+- `addons/cours_derives/` : module Odoo initial (issu du TP 0).
+- `src/` : code source principal de l'application.
+- `tests/` : suites de tests unitaires et d'intégration.
+- `notebooks/` : notebooks d'analyse et de traitement de données.
+- `data/` : fichiers et jeux de données de référence.
 
 ## Lancement
 
-À la racine du projet :
+Exécuter la commande suivante à la racine du dépôt :
 
 ```bash
 docker compose up -d
-```
 
-Accès à Odoo : http://localhost:8069
+
